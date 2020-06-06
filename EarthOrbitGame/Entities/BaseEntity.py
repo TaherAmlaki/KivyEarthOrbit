@@ -12,6 +12,7 @@ class Entity:
         self.vx = 0
         self.vy = 0
         self.force = None
+        self.line_points = []
 
     @property
     def ellipse(self):

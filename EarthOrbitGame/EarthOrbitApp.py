@@ -5,22 +5,20 @@ from kivy.uix.label import Label
 from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, SlideTransition
 from kivy.core.window import Window
-from Gui.IntroductionPage import IntroScreen
+from Gui.IntroductionPage import IntroductionScreen
 from Gui.GamePage import GameScreen
 from Paths import PageNames, ForceAppPath
 
 
-class ForceApp(App):
+class EarthOrbitApp(App):
     title = "Earth Orbit Game"
 
     def __init__(self, **kwargs):
         self.icon = ForceAppPath.FORCE_ICON.value
         super().__init__(**kwargs)
         self.sm = ScreenManager(transition=SlideTransition(duration=1))
-
-        self._intro_page = IntroScreen(name=PageNames.INTRO.value)
+        self._intro_page = IntroductionScreen(name=PageNames.INTRO.value)
         self._game_page = GameScreen(name=PageNames.GAME_PAGE.value)
-
         self.sm.add_widget(self._intro_page)
         self.sm.add_widget(self._game_page)
         self._popup_exit = None
@@ -54,7 +52,7 @@ class ForceApp(App):
 
 
 if __name__ == "__main__":
-    app = ForceApp()
+    app = EarthOrbitApp()
     try:
         app.run()
     except Exception as ex:

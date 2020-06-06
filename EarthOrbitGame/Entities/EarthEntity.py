@@ -11,7 +11,6 @@ class Earth(Entity):
         self._at_inf = False
         self.xc = self.size[0] * 0.5
         self.yc = self.size[1] * 0.5
-        self.line_points = []  # [self.x + self.xc, self.y + self.yc]
         self.r = None
 
     def move(self, *args, **kwargs):

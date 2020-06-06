@@ -7,7 +7,6 @@ class Sun(Entity):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.line_points = []
         self.xc = self.size[0] * 0.5
         self.yc = self.size[1] * 0.5
 

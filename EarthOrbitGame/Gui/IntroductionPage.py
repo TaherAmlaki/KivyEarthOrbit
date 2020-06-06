@@ -8,7 +8,7 @@ from Gui.Background import StaticBackground
 from Paths import PageNames
 
 
-class IntroScreen(Screen):
+class IntroductionScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.force = {}
