@@ -24,7 +24,6 @@ class EarthOrbitApp(App):
         self._popup_exit = None
 
     def build(self):
-        self.icon = ForceAppPath.FORCE_ICON.value
         Window.clearcolor = (0.25, 0.25, 0.25, 1)
         Window.bind(on_request_close=self.on_request_close)
         return self.sm
@@ -37,7 +36,6 @@ class EarthOrbitApp(App):
     def textpopup(self, title='', text=''):
         box = GridLayout(cols=1, size_hint_x=0.25)
         box.add_widget(Label(text=text))
-
         button_grid = GridLayout(cols=2, size_hint_x=0.5, size_hint_y=0.35)
         ok_button = Button(text='YES', size_hint=(0.25, 0.3))
         ok_button.bind(on_release=self.stop)
@@ -45,7 +43,6 @@ class EarthOrbitApp(App):
         cancel_button = Button(text="NO", size_hint=(0.25, 0.3))
         cancel_button.bind(on_release=lambda *args: self._popup_exit.dismiss())
         button_grid.add_widget(cancel_button)
-
         box.add_widget(button_grid)
         self._popup_exit = Popup(title=title, content=box, size_hint=(0.3, 0.4))
         self._popup_exit.open()
